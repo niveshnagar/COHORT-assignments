@@ -4,7 +4,18 @@
 */
 
 function isPalindrome(str) {
+  const str1 = str.toLowerCase().replace(/ /g, "").replace(/,/g, "");
+  console.log(str1);
+  let left = 0;
+  let right = str1.length - 1;
+  while (left < right) {
+    if (str1[left] !== str1[right]) return false;
+    left++;
+    right--;
+  }
   return true;
 }
+
+isPalindrome("Was it a car or a cat I saw");
 
 module.exports = isPalindrome;
